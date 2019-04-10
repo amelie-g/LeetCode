@@ -14,11 +14,11 @@ class Solution(object):
         def find(root, tier):
             if not root:
                 return 0
-            if self.t < tier:
-                self.t = tier
+            if self.val < tier:
+                self.val = tier
             find(root.left, tier+1)
             find(root.right, tier+1)
             
-        self.t = 0
+        self.val = 0
         find(root, 1)
-        return self.t
+        return self.val
